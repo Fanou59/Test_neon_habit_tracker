@@ -21,6 +21,9 @@ const pool = new Pool({
     require: true,
   },
 });
+fastify.get("/", async (request, reply) => {
+  reply.send({ hello: "world" });
+});
 
 fastify.get("/data", async (request, reply) => {
   const client = await pool.connect();
