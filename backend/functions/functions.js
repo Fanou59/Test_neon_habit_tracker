@@ -1,6 +1,6 @@
 import pg from "pg";
 const { Pool } = pg;
-import { pool } from "../index.js/index.js";
+import { pool } from "../index.js";
 
 export const executeQuery = async (query, params) => {
   const client = await pool.connect();
