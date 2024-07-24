@@ -61,6 +61,8 @@ getPgVersion();
 // start();
 
 export default async function handler(req, reply) {
+  console.log("Handler invoked");
+  console.log(`Received request: ${req.method} ${req.url}`);
   await fastify.ready();
   fastify.server.emit("request", req, reply);
 }
