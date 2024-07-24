@@ -47,22 +47,7 @@ const getPgVersion = async () => {
 
 getPgVersion();
 
-// Lancer le serveur Fastify
-// const start = async () => {
-//   try {
-//     await fastify.listen({ port: 3000 });
-//     fastify.log.info(`Server listening on ${fastify.server.address().port}`);
-//   } catch (err) {
-//     fastify.log.error(err);
-//     process.exit(1);
-//   }
-// };
-
-// start();
-
 export default async function handler(req, reply) {
-  console.log("Handler invoked");
-  console.log(`Received request: ${req.method} ${req.url}`);
   await fastify.ready();
   fastify.server.emit("request", req, reply);
 }
